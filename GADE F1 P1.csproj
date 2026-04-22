@@ -1,0 +1,124 @@
+﻿using static System.Net.Mime.MediaTypeNames;
+
+namespace GADE_F1_P1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            using System;
+            using System.Windows.Forms;
+
+namespace GADE_PART_1
+    {
+        internal static class Program
+        {
+            [STAThread]
+            static void Main()
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Form1());
+                private void btnStartGame_Click(object sender, EventArgs e)
+            {
+                Form2 f = new Form2();
+                f.Show();
+                this.Hide();
+                using System;
+                using System.Windows.Forms;
+
+namespace GADE_PART_1
+        {
+            public partial class Form2 : Form
+            {
+                int hp1 = 30;
+                int hp2 = 30;
+                bool player1Turn = true;
+
+                public Form2()
+                {
+                    InitializeComponent();
+                    UpdateDisplay();
+                }
+
+                private void UpdateDisplay()
+                {
+                    lblHP1.Text = "Player 1 HP: " + hp1;
+                    lblHP2.Text = "Player 2 HP: " + hp2;
+
+                    if (player1Turn)
+                        lblTurn.Text = "Player 1 Turn";
+                    else
+                        lblTurn.Text = "Player 2 Turn";
+                }
+
+                private void btnAttack_Click(object sender, EventArgs e)
+                {
+                    if (player1Turn)
+                    {
+                        hp2 -= 5;
+                        txtLog.AppendText("Player 1 attacks\n");
+                    }
+                    else
+                    {
+                        hp1 -= 5;
+                        txtLog.AppendText("Player 2 attacks\n");
+                    }
+
+                    SwitchTurn();
+                }
+
+                private void btnSpecial_Click(object sender, EventArgs e)
+                {
+                    if (player1Turn)
+                    {
+                        hp2 -= 10;
+                        txtLog.AppendText("Player 1 uses special\n");
+                    }
+                    else
+                    {
+                        hp1 -= 10;
+                        txtLog.AppendText("Player 2 uses special\n");
+                    }
+
+                    SwitchTurn();
+                }
+
+                private void btnBlock_Click(object sender, EventArgs e)
+                {
+                    txtLog.AppendText("Block used\n");
+                    SwitchTurn();
+                }
+
+                private void SwitchTurn()
+                {
+                    player1Turn = !player1Turn;
+                    CheckWinner();
+                    UpdateDisplay();
+                }
+
+                private void CheckWinner()
+                {
+                    if (hp1 <= 0)
+                    {
+                        MessageBox.Show("Player 2 Wins!");
+                        this.Close();
+                    }
+                    else if (hp2 <= 0)
+                    {
+                        MessageBox.Show("Player 1 Wins!");
+                        this.Close();
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+    }
+    }
+
+}
+    }
+}
